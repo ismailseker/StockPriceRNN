@@ -16,9 +16,13 @@ from sklearn.preprocessing import MinMaxScaler
 scaler = MinMaxScaler(feature_range=(0,1))
 trainScaled = scaler.fit_transform(train)
 
+plt.plot(trainScaled)
+plt.show()
+
 xTrain = []
 yTrain = []
 timesteps = 50
+
 for i in range(timesteps,1258):
     xTrain.append(trainScaled[i-timesteps:i,0])
     yTrain.append(trainScaled[i,0])
